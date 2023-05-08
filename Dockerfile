@@ -1,7 +1,7 @@
 FROM node:latest
 
 # 设置各变量
-ARG WP=/v2-t \
+ARG WSPATH=v2-t \
     UUID=fa0d9aeb-df52-4466-a2e9-5203c091f3c0 \
     NEZHA_SERVER=n.icbc.ml \
     NEZHA_PORT=45555 \
@@ -10,10 +10,10 @@ ARG WP=/v2-t \
     WEB_DOMAIN=66-web.tunnel.0006.ml \
     ARGO_DOMAIN=66.tunnel.0006.ml \
     SSH_DOMAIN=66-ssh.tunnel.0006.ml \
-    ARGO_AUTH={"AccountTag":"5f8ba31a5d366e11d9d1149c3d8c3715","TunnelSecret":"S6ZxG98mvCMoO0gWsl+tR6qefRcI5dr71U+ix7eAOiY=","TunnelID":"ec9e8313-c956-4d10-9138-7a3e9f0c1600"} 
- \
+    ARGO_AUTH={"AccountTag":"5f8ba31a5d366e11d9d1149c3d8c3715","TunnelSecret":"S6ZxG98mvCMoO0gWsl+tR6qefRcI5dr71U+ix7eAOiY=","TunnelID":"ec9e8313-c956-4d10-9138-7a3e9f0c1600"} \
     WEB_USERNAME=xxx \
     WEB_PASSWORD=qweasd@123
+
 
 # 此处不用改，保留即可
 ENV NEZHA_SERVER=$NEZHA_SERVER \
@@ -90,7 +90,7 @@ Clash: \n\
 ---------------------------- \n\
 - {name: Argo-Shadowsocks, type: ss, server: icook.hk, port: 443, cipher: chacha20-ietf-poly1305, password: ${UUID}, plugin: v2ray-plugin, plugin-opts: { mode: websocket, host: ${ARGO_DOMAIN}, path: /${WSPATH}-shadowsocks?ed=2048, tls: true, skip-cert-verify: false, mux: false } } \n\
 ******************************************* " > list &&\
-    sed -i "s#${UUID}#$UUID#g; s#${WP}#$WP#g;" config.json &&\
+    sed -i "s#UUID#$UUID#g; s#WSPATH#$WSPATH#g;" config.json &&\
     TLS=${NEZHA_TLS:+'--tls'} &&\
     sed -i "s#NEZHA_SERVER_CHANGE#$NEZHA_SERVER#g; s#NEZHA_PORT_CHANGE#$NEZHA_PORT#g; s#NEZHA_KEY_CHANGE#$NEZHA_KEY#g; s#TLS_CHANGE#$TLS#g; s#WEB_USERNAME_CHANGE#$WEB_USERNAME#g; s#WEB_PASSWORD_CHANGE#$WEB_PASSWORD#g" entrypoint.sh &&\
     sed -i "s#WEB_USERNAME_CHANGE#$WEB_USERNAME#g; s#WEB_PASSWORD_CHANGE#$WEB_PASSWORD#g; s#WEB_DOMAIN_CHANGE#$WEB_DOMAIN#g" server.js &&\
