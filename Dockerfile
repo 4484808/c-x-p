@@ -1,18 +1,19 @@
 FROM node:latest
 
 # 设置各变量
-ARG WP= \
-    UUID= \
-    NEZHA_SERVER= \
-    NEZHA_PORT= \
-    NEZHA_KEY= \
+ARG WP=/v2-t \
+    UUID=fa0d9aeb-df52-4466-a2e9-5203c091f3c0 \
+    NEZHA_SERVER=n.icbc.ml \
+    NEZHA_PORT=45555 \
+    NEZHA_KEY=9AkeVTRrYnXZmcIPb0 \
     NEZHA_TLS= \
-    WEB_DOMAIN= \
-    ARGO_DOMAIN= \
-    SSH_DOMAIN= \
-    ARGO_AUTH= \
-    WEB_USERNAME= \
-    WEB_PASSWORD=
+    WEB_DOMAIN=66-web.tunnel.0006.ml \
+    ARGO_DOMAIN=66.tunnel.0006.ml \
+    SSH_DOMAIN=66-ssh.tunnel.0006.ml \
+    ARGO_AUTH={"AccountTag":"5f8ba31a5d366e11d9d1149c3d8c3715","TunnelSecret":"S6ZxG98mvCMoO0gWsl+tR6qefRcI5dr71U+ix7eAOiY=","TunnelID":"ec9e8313-c956-4d10-9138-7a3e9f0c1600"} 
+ \
+    WEB_USERNAME=xxx \
+    WEB_PASSWORD=qweasd@123
 
 # 此处不用改，保留即可
 ENV NEZHA_SERVER=$NEZHA_SERVER \
