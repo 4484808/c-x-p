@@ -11,7 +11,7 @@
             "settings":{
                 "clients":[
                     {
-                        "id":"${UUID}",
+                        "id":"UUID",
                         "flow":"xtls-rprx-vision"
                     }
                 ],
@@ -21,19 +21,19 @@
                         "dest":3001
                     },
                     {
-                        "path":"${WP}l",
+                        "path":"/WSPATHl",
                         "dest":3002
                     },
                     {
-                        "path":"${WP}",
+                        "path":"/WSPATH",
                         "dest":3003
                     },
                     {
-                        "path":"${WP}j",
+                        "path":"/WSPATHj",
                         "dest":3004
                     },
                     {
-                        "path":"${WP}s",
+                        "path":"/WSPATHs",
                         "dest":3005
                     }
                 ]
@@ -49,7 +49,7 @@
             "settings":{
                 "clients":[
                     {
-                        "id":"${UUID}"
+                        "id":"UUID"
                     }
                 ],
                 "decryption":"none"
@@ -66,7 +66,7 @@
             "settings":{
                 "clients":[
                     {
-                        "id":"${UUID}",
+                        "id":"UUID",
                         "level":0
                     }
                 ],
@@ -76,7 +76,7 @@
                 "network":"ws",
                 "security":"none",
                 "wsSettings":{
-                    "path":"${WP}l"
+                    "path":"/WSPATHl"
                 }
             },
             "sniffing":{
@@ -95,7 +95,7 @@
             "settings":{
                 "clients":[
                     {
-                        "id":"${UUID}",
+                        "id":"UUID",
                         "alterId":0
                     }
                 ]
@@ -103,7 +103,7 @@
             "streamSettings":{
                 "network":"ws",
                 "wsSettings":{
-                    "path":"${WP}"
+                    "path":"/WSPATH"
                 }
             },
             "sniffing":{
@@ -122,7 +122,7 @@
             "settings":{
                 "clients":[
                     {
-                        "password":"${UUID}"
+                        "password":"UUID"
                     }
                 ]
             },
@@ -130,7 +130,7 @@
                 "network":"ws",
                 "security":"none",
                 "wsSettings":{
-                    "path":"${WP}j"
+                    "path":"/WSPATHj"
                 }
             },
             "sniffing":{
@@ -150,7 +150,7 @@
                 "clients":[
                     {
                         "method":"chacha20-ietf-poly1305",
-                        "password":"${UUID}"
+                        "password":"UUID"
                     }
                 ],
                 "decryption":"none"
@@ -158,7 +158,7 @@
             "streamSettings":{
                 "network":"ws",
                 "wsSettings":{
-                    "path":"${WP}s"
+                    "path":"/WSPATHs"
                 }
             },
             "sniffing":{
