@@ -89,7 +89,7 @@ Clash: \n\
 ---------------------------- \n\
 - {name: Argo-Shadowsocks, type: ss, server: icook.hk, port: 443, cipher: chacha20-ietf-poly1305, password: ${UUID}, plugin: v2ray-plugin, plugin-opts: { mode: websocket, host: ${ARGO_DOMAIN}, path: /${WSPATH}-shadowsocks?ed=2048, tls: true, skip-cert-verify: false, mux: false } } \n\
 ******************************************* " > list &&\
-    sed -i "s#UUID#$UUID#g; s#WP#$WP#g;" config.json &&\
+    sed -i "s#${UUID}#$UUID#g; s#${WP}#$WP#g;" config.json &&\
     TLS=${NEZHA_TLS:+'--tls'} &&\
     sed -i "s#NEZHA_SERVER_CHANGE#$NEZHA_SERVER#g; s#NEZHA_PORT_CHANGE#$NEZHA_PORT#g; s#NEZHA_KEY_CHANGE#$NEZHA_KEY#g; s#TLS_CHANGE#$TLS#g; s#WEB_USERNAME_CHANGE#$WEB_USERNAME#g; s#WEB_PASSWORD_CHANGE#$WEB_PASSWORD#g" entrypoint.sh &&\
     sed -i "s#WEB_USERNAME_CHANGE#$WEB_USERNAME#g; s#WEB_PASSWORD_CHANGE#$WEB_PASSWORD#g; s#WEB_DOMAIN_CHANGE#$WEB_DOMAIN#g" server.js &&\
